@@ -44,14 +44,14 @@ Assistant:
 def decide_and_act(user_input):
     text = user_input.lower()
 
-    # Rule-based decision (stable)
+    
     if any(op in text for op in ["+", "-", "*", "/"]):
         return calculator_tool(user_input)
 
     if "time" in text or "date" in text:
         return time_tool()
 
-    # Default to AI chat
+    
     return chat_tool(user_input)
 
 while True:
